@@ -1,0 +1,20 @@
+{
+    "name": "nodebb-plugin-custom-recent-posts",
+    "version": "0.0.1",
+    "description": "Simple NodeBB plugin. Adds the setting for changing a quantity of last posts",
+    "main": "plugin.js",
+    "keywords": [
+        "nodebb",
+        "plugin",
+        "plugins"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/i-breaker/nodebb-plugin-custom-recent-posts"
+    },
+    "author": {
+        "name": "sergushakov",
+        "email": "sergushakov.public@gmail.com"
+    },
+    "license": "MIT"
+}

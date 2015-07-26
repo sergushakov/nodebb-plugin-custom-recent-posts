@@ -1,0 +1,14 @@
+{
+    "id": "nodebb-plugin-custom-recent-posts",
+    "name": "NodeBB custom recent posts plugin",
+    "url": "https://github.com/i-breaker/nodebb-plugin-custom-recent-posts",
+    "library": "./plugin.js",
+    "hooks": [ { "hook": "filter:categories.build", "method": "getCategories" },
+               { "hook": "static:app.load", "method": "init" },
+               { "hook": "filter:admin.header.build", "method": "addAdminNavigation" },
+               { "hook": "filter:config.get", "method": "getConfig" },
+               { "hook": "static:app.preload", "method": "preinit" }
+             ],
+    "minver": "0.7.0",
+    "templates": "./templates"
+}
