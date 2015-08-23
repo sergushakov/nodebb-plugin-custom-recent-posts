@@ -48,13 +48,6 @@
         });
     };
 
-    plugin.buildCategory = function(obj,callback){
-        if(obj.templateData.cid === meta.config.blogCategoryId){
-            obj.templateData.isBlog = true;
-        }
-        callback(false,obj);
-    };
-
     plugin.getCategory = function(obj,callback){
         Promise
             .all(obj.category.children.map(function(x){
@@ -71,23 +64,23 @@
         ;
     };
 
-    plugin.getTopics = function(obj,callback){
-        Promise.all(obj.topics.map(function(x){
-            return new Promise(function(resolve,reject){
-                Topics.getMainPost(x.tid,obj.uid,function(err,data){
-                    if(err) reject(err);
-                    x.content = data.content;
-                    Posts.getPostField(x.pid,"test",function(err,rsp){
-                        x.extra = rsp;
-                        resolve(x);
-                    });
-                });
-            });
-        })).then(function(data){
-            obj.topics = data;
-            callback(false,obj);
-        });
-    };
+    //plugin.getTopics = function(obj,callback){
+    //    Promise.all(obj.topics.map(function(x){
+    //        return new Promise(function(resolve,reject){
+    //            Topics.getMainPost(x.tid,obj.uid,function(err,data){
+    //                if(err) reject(err);
+    //                x.content = data.content;
+    //                Posts.getPostField(x.pid,"test",function(err,rsp){
+    //                    x.extra = rsp;
+    //                    resolve(x);
+    //                });
+    //            });
+    //        });
+    //    })).then(function(data){
+    //        obj.topics = data;
+    //        callback(false,obj);
+    //    });
+    //};
 
     function prepareCategory(x,uid){
         return new Promise(function(resolve,reject){
