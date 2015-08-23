@@ -1,6 +1,6 @@
 {
     "name": "nodebb-plugin-custom-recent-posts",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Simple NodeBB plugin. Adds the setting for changing a quantity of last posts",
     "main": "plugin.js",
     "keywords": [
